@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Projects Table</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        /* Table with border attribute - 2px borders */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table,
+        th,
+        td {
+            border: 2px solid #333;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        td {
+            padding: 10px;
+            text-align: center;
+            vertical-align: top;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tfoot {
+            background-color: #ddd;
+            font-weight: bold;
+        }
+
+        tfoot td {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .project-name {
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .student-name {
+            text-align: left;
+        }
+
+        .remarks {
+            text-align: left;
+            font-size: 13px;
+        }
+
+        .excellent {
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        .good {
+            color: #f39c12;
+            font-weight: bold;
+        }
+
+        .pending {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .note {
+            background-color: #f4f4f4;
+            padding: 12px;
+            margin-top: 20px;
+            border-left: 3px solid #4CAF50;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Student Project Details</h1>
+
+        <!-- HTML Table with border, thead, tbody, tfoot, rowspan, colspan -->
+        <table>
+            <!-- Table Header -->
+            <thead>
+                <tr>
+                    <th>S.N</th>
+                    <th>Project Name</th>
+                    <th>Student Name</th>
+                    <th>Exam Roll Number</th>
+                    <th>Remarks</th>
+                </tr>
+            </thead>
+
+            <!-- Table Body -->
+            <tbody>
+                <!-- Project 1: 2 students working together (using rowspan) -->
+                <tr>
+                    <td rowspan="2">1</td>
+                    <td class="project-name" rowspan="2">E-Learning Platform</td>
+                    <td class="student-name">John Doe</td>
+                    <td>2024001</td>
+                    <td class="remarks"><span class="excellent">Excellent</span> - Completed with extra features</td>
+                </tr>
+                <tr>
+                    <td class="student-name">Jane Smith</td>
+                    <td>2024002</td>
+                    <td class="remarks"><span class="excellent">Excellent</span> - Outstanding UI design</td>
+                </tr>
+
+                <!-- Project 2: 2 students working together (using rowspan) -->
+                <tr>
+                    <td rowspan="2">2</td>
+                    <td class="project-name" rowspan="2">Inventory Management System</td>
+                    <td class="student-name">Mike Johnson</td>
+                    <td>2024005</td>
+                    <td class="remarks"><span class="good">Good</span> - Database well structured</td>
+                </tr>
+                <tr>
+                    <td class="student-name">Sarah Williams</td>
+                    <td>2024006</td>
+                    <td class="remarks"><span class="good">Good</span> - Good documentation</td>
+                </tr>
+
+                <!-- Project 3: Single student (no rowspan needed) -->
+                <tr>
+                    <td>3</td>
+                    <td class="project-name">Weather Forecast App</td>
+                    <td class="student-name">David Brown</td>
+                    <td>2024009</td>
+                    <td class="remarks"><span class="excellent">Excellent</span> - Real-time data integration</td>
+                </tr>
+
+                <!-- Project 4: 2 students working together (using rowspan) -->
+                <tr>
+                    <td rowspan="2">4</td>
+                    <td class="project-name" rowspan="2">Portfolio Website Builder</td>
+                    <td class="student-name">Emily Davis</td>
+                    <td>2024012</td>
+                    <td class="remarks"><span class="pending">Pending Review</span> - Requires testing</td>
+                </tr>
+                <tr>
+                    <td class="student-name">Robert Wilson</td>
+                    <td>2024013</td>
+                    <td class="remarks"><span class="pending">Pending Review</span> - Need to fix responsiveness</td>
+                </tr>
+            </tbody>
+
+            <!-- Table Footer - using colspan to span all columns -->
+            <tfoot>
+                <tr>
+                    <td colspan="5">
+                        <strong>Summary:</strong> Total Projects: 4 | Total Students: 7 | Excellent: 3 | Good: 2 |
+                        Pending: 2
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+
+
+    </div>
+</body>
+
+</html>
