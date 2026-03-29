@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h3>Fibonacci Arrow Function</h3>
+
+    <input id="n" type="number">
+    <button onclick="fib()">Go</button>
+
+    <p id="out"></p>
+
+    <script>
+        const fib = () => {
+            let n = +document.getElementById("n").value;
+            let a = 0, b = 1, res = "";
+
+            for (let i = 0; i < n; i++) {
+                res += a + " ";
+                [a, b] = [b, a + b];
+            }
+
+            document.getElementById("out").innerText = res;
+        };
+    </script>
+
+</body>
+
+</html>

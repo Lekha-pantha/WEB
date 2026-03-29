@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fibonacci Generator</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .box {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+
+        input {
+            width: 80%;
+            padding: 8px;
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 8px 15px;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .result {
+            margin-top: 15px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <h2>Fibonacci Generator</h2>
+
+        <input type="number" id="num" placeholder="Enter number of terms">
+
+        <br>
+
+        <button onclick="generate()">Generate</button>
+
+        <div class="result" id="output"></div>
+    </div>
+
+    <script>
+        function generate() {
+            let n = document.getElementById("num").value;
+            n = parseInt(n);
+
+            let a = 0, b = 1;
+            let result = "";
+
+            if (n <= 0) {
+                result = "Please enter a valid number";
+            } else if (n === 1) {
+                result = "0";
+            } else {
+                result = a + "<br>" + b + "<br>";
+
+                for (let i = 3; i <= n; i++) {
+                    let c = a + b;
+                    result += c + "<br>";
+                    a = b;
+                    b = c;
+                }
+            }
+
+            document.getElementById("output").innerHTML = result;
+        }
+    </script>
+
+</body>
+
+</html>

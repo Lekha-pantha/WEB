@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Array</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f8;
+            padding: 20px;
+        }
+
+        .box {
+            background: rgb(243, 169, 242);
+            padding: 20px;
+            width: 400px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(131, 56, 141, 0.1);
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            background: #912093;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background: #8c00b3;
+        }
+
+        .result {
+            margin-top: 15px;
+            padding: 10px 15px;
+            border: none;
+            color: rgb(41, 17, 111);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h2>Student Data Entry</h2>
+        <button onclick="addStudents()">Start Input</button>
+        <div class="result" id="output"></div>
+    </div>
+    <script>
+        function addStudents() {
+            let students = [];
+            function getStudent() {
+                let name = prompt("Enter Student Name:");
+                let roll = prompt("Enter Roll Number:");
+                let project = prompt("Enter Project Name:");
+                let remark = prompt("Enter Remarks:");
+                let student = {
+                    name: name,
+                    roll: roll,
+                    project: project,
+                    remark: remark
+                };
+                students.push(student);
+                let more = confirm("Do you want to add another student?");
+                if (more) {
+                    getStudent(); // recursion (function calls itself)
+                } else {
+                    displayStudents(students);
+                }
+            }
+            function displayStudents(students) {
+                let output = "<h3>Student List</h3>";
+                for (let i = 0; i < students.length; i++) {
+                    output += `
+                <p>
+                <b>Student ${i + 1}</b><br>
+                Name: ${students[i].name}<br>
+                Roll: ${students[i].roll}<br>
+                Project: ${students[i].project}<br>
+                Remark: ${students[i].remark}
+                </p>
+                <hr>
+            `;
+                }
+                document.getElementById("output").innerHTML = output;
+            }
+            getStudent();
+        }
+    </script>
+</body>
+
+</html>

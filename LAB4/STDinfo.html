@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Project Details</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 3px solid #da65d6;
+        }
+
+        h1 {
+            text-align: center;
+            color: #51073a;
+            margin-bottom: 30px;
+        }
+
+        .info {
+            line-height: 2.0;
+            font-size: 18px;
+        }
+
+        .label {
+            font-weight: bold;
+            color: #2f75bb;
+        }
+
+        button {
+            display: block;
+            margin: 25px auto 0;
+            padding: 12px 25px;
+            font-size: 16px;
+            background-color: #c234db;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #b92997;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Student Project Information</h1>
+
+        <div id="output" class="info">
+
+        </div>
+
+        <button onclick="getStudentInfo()">Enter Student Details</button>
+    </div>
+
+    <script>
+        function getStudentInfo() {
+
+            let name = prompt("Enter Student Name:");
+            let roll = prompt("Enter Roll Number:");
+            let dept = prompt("Enter Department:");
+            let project = prompt("Enter Project Title:");
+
+            if (name === null || roll === null || dept === null || project === null) {
+                alert("You cancelled the input. Please try again.");
+                return;
+            }
+
+
+            const student = {
+                studentName: name.trim(),
+                rollNumber: roll.trim(),
+                department: dept.trim(),
+                projectTitle: project.trim()
+            };
+
+
+            const outputHTML = `
+        <p><span class="label">Student Name:</span> ${student.studentName}</p>
+        <p><span class="label">Roll Number:</span> ${student.rollNumber}</p>
+        <p><span class="label">Department:</span> ${student.department}</p>
+        <p><span class="label">Project Title:</span> ${student.projectTitle}</p>
+      `;
+
+            // Insert the formatted details into the HTML document
+            document.getElementById("output").innerHTML = outputHTML;
+        }
+    </script>
+</body>
+
+</html>
